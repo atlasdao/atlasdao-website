@@ -1,0 +1,42 @@
+---
+// src/layouts/Layout.astro
+
+// Importa o nosso CSS principal do Tailwind
+import '../styles/tailwind.css';
+
+// Define as propriedades que cada página pode passar para o layout
+export interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Importação da Fonte Inter do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<!-- Aplica a cor de fundo, cor de texto e fonte padrão para todo o site -->
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <!-- O <slot /> é onde o conteúdo de cada página será injetado -->
+    <slot />
+</body>
+</html>
+
+<style is:global>
+    /* Define a fonte Inter como padrão para o body */
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+</style>

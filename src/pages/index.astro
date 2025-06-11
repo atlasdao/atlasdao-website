@@ -1,16 +1,40 @@
 ---
-
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Principles from '../components/Principles.astro';
+import Roadmap from '../components/Roadmap.astro';
+import FinalCTA from '../components/FinalCTA.astro';
 ---
+<Layout 
+    title="Atlas DAO - Ferramentas para Soberania Financeira" 
+    description="Uma iniciativa dedicada ao desenvolvimento de software de código aberto para capacitar indivíduos com autonomia sobre seus ativos financeiros.">
+    
+    <div class="flex flex-col min-h-screen">
+        <Header />
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+        <main class="flex-grow">
+            <!-- Seção Hero Atualizada -->
+            <section class="container mx-auto px-6 py-16 md:py-24 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight tracking-tighter text-white">
+                    A Ponte para Sua<br class="hidden md:block"> Soberania Financeira
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                    O Atlas Bridge é a primeira iniciativa da Atlas DAO: uma interface de minimização de confiança entre o sistema Pix e a Liquid Network, projetada para a sua autonomia.
+                </p>
+                <div class="mt-10">
+                    <a href="https://t.me/atlas_bridge_bot" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-4 px-8 rounded-lg transition-colors duration-200 shadow-lg">
+                        Acesse a Versão Alfa
+                    </a>
+                </div>
+            </section>
+
+            <Principles />
+            <Roadmap />
+            <FinalCTA />
+        </main>
+
+        <Footer />
+    </div>
+</Layout>

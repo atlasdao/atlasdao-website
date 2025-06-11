@@ -1,0 +1,19 @@
+---
+// src/components/Icon.astro
+interface Props {
+  path: string;
+  size?: number;
+  class?: string;
+}
+const { path, size = 24, class: className } = Astro.props;
+---
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="currentColor"
+  class={className}
+>
+  <path d={path}></path>
+</svg>

@@ -1,0 +1,47 @@
+---
+// src/components/Roadmap.astro
+const roadmapItems = [
+    { status: 'Concluído', title: 'MVP Alfa: Conversão de Pix para DePix', description: 'Permite que usuários gerem cobranças Pix e recebam DePix em uma carteira Liquid não custodial.' },
+    { status: 'Planejado', title: 'Pagamentos Pix com DePix (Saída)', description: 'Capacidade de utilizar saldo DePix para realizar pagamentos para qualquer chave ou QR Code Pix.' },
+    { status: 'Planejado', title: 'Suporte a DePix na Lightning Network', description: 'Utilização de DePix via Taproot Assets para transações instantâneas e taxas reduzidas.' },
+    { status: 'Pesquisa', title: 'Opções de "Top-up" Ampliadas', description: 'Adicionar saldo utilizando Bitcoin (on-chain e Lightning Network) e Monero.' },
+    { status: 'Pesquisa', title: 'Modo Custodial Opcional', description: 'Uma alternativa para usuários iniciantes que preferem não gerenciar chaves privadas inicialmente.' }
+];
+---
+
+<section class="py-20 sm:py-24">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Roteiro de Desenvolvimento</h2>
+            <p class="mt-4 text-lg leading-8 text-gray-300">O nosso trabalho é contínuo e focado em ampliar a soberania financeira.</p>
+        </div>
+
+        <div class="space-y-12">
+            {roadmapItems.map(item => (
+                <div class="flex items-start">
+                    <div class="flex flex-col items-center mr-6">
+                        <div class:list={[
+                            "w-8 h-8 rounded-full flex items-center justify-center text-white font-bold",
+                            { 'bg-green-600': item.status === 'Concluído' },
+                            { 'bg-blue-600': item.status === 'Planejado' },
+                            { 'bg-yellow-600': item.status === 'Pesquisa' }
+                        ]}>
+                            ✓
+                        </div>
+                        <div class="w-px h-full bg-gray-700 mt-2"></div>
+                    </div>
+                    <div class="pt-1">
+                        <p class:list={[
+                            "text-sm font-semibold",
+                            { 'text-green-400': item.status === 'Concluído' },
+                            { 'text-blue-400': item.status === 'Planejado' },
+                            { 'text-yellow-400': item.status === 'Pesquisa' }
+                        ]}>{item.status}</p>
+                        <h3 class="text-xl font-bold text-white mt-1">{item.title}</h3>
+                        <p class="mt-2 text-gray-400">{item.description}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

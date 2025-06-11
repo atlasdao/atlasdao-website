@@ -1,0 +1,51 @@
+---
+// src/components/Principles.astro
+import Icon from './Icon.astro';
+
+// Ícones foram substituídos por metáforas visuais mais fortes e universalmente reconhecidas.
+const principles = [
+  {
+    // Chave: Representa acesso, posse e autocustódia.
+    icon: "M15.75 5.25a3 3 0 013 3m3 0a9 9 0 11-18 0 9 9 0 0118 0zM18 9.75a.75.75 0 00-1.5 0v2.25a.75.75 0 00.75.75h2.25a.75.75 0 000-1.5H18v-2.25z",
+    title: "Soberania do Usuário",
+    description: "O controle sobre as chaves privadas e, consequentemente, os fundos, permanece com o usuário."
+  },
+  {
+    // Escudo com um "check": Representa segurança e a verificação de que a confiança não é necessária.
+    icon: "M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286z",
+    title: "Minimização de Confiança",
+    description: "Arquitetura projetada para reduzir a dependência de intermediários, incluindo a própria Atlas DAO."
+  },
+  {
+    // Hub com nós: Representa uma rede descentralizada, o oposto de um ponto central de falha.
+    icon: "M8.25 3.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM15.75 3.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM8.25 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM15.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM8.25 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM15.75 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 7.5a.75.75 0 110-1.5.75.75 0 010 1.5zM12 15.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 1.5a.75.75 0 110-1.5.75.75 0 010 1.5zM12 9.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18a.75.75 0 110-1.5.75.75 0 010 1.5zM18.75 7.5a.75.75 0 110-1.5.75.75 0 010 1.5zM18.75 15.75a.75.75 0 110-1.5.75.75 0 010 1.5zM3.75 7.5a.75.75 0 110-1.5.75.75 0 010 1.5zM3.75 15.75a.75.75 0 110-1.5.75.75 0 010 1.5z",
+    title: "Resistência à Censura",
+    description: "Design descentralizado que visa maximizar a resiliência contra tentativas de bloqueio ou controle."
+  },
+  {
+    // Clássico sinal de código </ >: Universalmente reconhecido para código-fonte.
+    icon: "M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25",
+    title: "Código Aberto (GPLv3)",
+    description: "Código fonte publicado para garantir as liberdades de usar, estudar, modificar e distribuir o software."
+  }
+];
+---
+<section class="py-20 sm:py-24 bg-gray-800">
+    <div class="container mx-auto px-6">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Uma Base de Princípios Sólidos</h2>
+            <p class="mt-4 text-lg leading-8 text-gray-300">O desenvolvimento do Atlas Bridge é guiado por preceitos inegociáveis.</p>
+        </div>
+        <div class="mt-16 grid grid-cols-1 gap-y-12 gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
+            {principles.map(p => (
+                <div class="text-center">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-900 mx-auto">
+                        <Icon path={p.icon} class="text-blue-500" />
+                    </div>
+                    <h3 class="mt-6 font-semibold text-white">{p.title}</h3>
+                    <p class="mt-2 text-base text-gray-400">{p.description}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
