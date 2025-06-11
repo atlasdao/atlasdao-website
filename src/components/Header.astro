@@ -1,12 +1,13 @@
 ---
-// src/components/Header.astro
+// Importa a imagem diretamente. O Astro irá processá-la.
+import logoBranco from '../assets/logo-branco.png';
 ---
 <header class="container mx-auto px-6 py-4">
     <nav class="flex justify-between items-center">
-        <!-- O logo foi ajustado para w-20 (mobile) e w-24 (desktop) -->
         <div class="w-20 md:w-24">
             <a href="/">
-                <img src="/assets/logo-branco.png" alt="Logo da Atlas DAO" width="96" height="24" />
+                {/* A imagem agora usa a variável importada. Astro gera o src, width, e height. */}
+                <img src={logoBranco.src} alt="Logo da Atlas DAO" width={logoBranco.width} height={logoBranco.height} />
             </a>
         </div>
         <a href="https://t.me/atlas_bridge_bot" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 text-sm md:text-base">

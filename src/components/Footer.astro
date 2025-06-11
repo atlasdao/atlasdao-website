@@ -1,16 +1,13 @@
 ---
-// src/components/Footer.astro
 import Icon from './Icon.astro';
 
-// Dados do rodapé - fáceis de editar
 const contactEmail = "contato@atlasdao.info";
-const gpgKeyUrl = "/gpg.asc"; // Você precisa adicionar o arquivo gpg.asc na pasta /public
-const githubUrl = "https://github.com/atlasdao";
+const gpgKeyUrl = "/gpg.asc";
+const githubUrl = "https://github.com/atlasdao"; // Link corrigido
 const telegramUrl = "https://t.me/+x0no8ursVlZhOTI5";
 const donationAddress = "VJLBCUaw6GL8AuyjsrwpwTYNCUfUxPVTfxxffNTEZMKEjSwamWL6YqUUWLvz89ts1scTDKYoTF8oruMX";
 const currentYear = new Date().getFullYear();
 
-// Ícones SVG
 const icons = {
   email: "M3 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H3Zm18 2-9 6-9-6h18Z",
   gpg: "M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 2c-1.3 0-2.4.8-2.8 2h5.6a3 3 0 0 0-2.8-2Z",
@@ -18,17 +15,13 @@ const icons = {
   telegram: "M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4.2 6.7-1.4 6.5c-.1.5-.5.6-1 .4l-2-1.5-1 1c-.1.1-.3.3-.5.3s-.4-.2-.5-.3l-1-1-2-1.5c-.5-.2-.5-.8 0-1.1l6.5-2.4c.5-.2 1 0 1 .4Z"
 };
 ---
-
 <footer class="border-t border-gray-800 bg-gray-900">
     <div class="container mx-auto px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Coluna 1: Sobre -->
             <div class="md:col-span-1">
                 <img src="/assets/logo-branco.png" alt="Logo da Atlas DAO" class="h-8 w-auto mb-4" />
                 <p class="text-gray-400">Desenvolvendo ferramentas de código aberto para a soberania financeira individual.</p>
             </div>
-
-            <!-- Coluna 2: Contato & Comunidade -->
             <div>
                 <h3 class="font-semibold text-white">Contato & Comunidade</h3>
                 <ul class="mt-4 space-y-2">
@@ -38,8 +31,6 @@ const icons = {
                     <li><a href={telegramUrl} target="_blank" rel="noopener noreferrer" class="flex items-center text-gray-400 hover:text-white"><Icon path={icons.telegram} class="mr-2"/> Telegram</a></li>
                 </ul>
             </div>
-
-            <!-- Coluna 3: Apoie o Projeto -->
             <div>
                 <h3 class="font-semibold text-white">Apoie o Projeto</h3>
                 <p class="mt-4 text-gray-400">Doações (Liquid: L-BTC, DePix):</p>
@@ -50,7 +41,6 @@ const icons = {
                 </div>
             </div>
         </div>
-
         <div class="mt-12 border-t border-gray-800 pt-8 text-center">
             <p class="text-gray-500">© {currentYear} Atlas DAO. Lançado sob a licença GPLv3.</p>
         </div>
@@ -58,8 +48,6 @@ const icons = {
 </footer>
 
 <script>
-// Pequeno script para o botão de copiar. Funciona como "progressive enhancement".
-// O endereço é 100% usável mesmo sem JavaScript.
 document.addEventListener('DOMContentLoaded', () => {
     const copyButton = document.getElementById('copy-button');
     const feedback = document.getElementById('copy-feedback');
